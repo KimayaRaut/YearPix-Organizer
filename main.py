@@ -6,7 +6,8 @@ root = Tk()
 
 # Set title
 root.title("YearPix Organizer")
-root.geometry('350x350')
+root.geometry('350x150')
+root.eval('tk::PlaceWindow . center')
 
 def onClick():
    flag = support.select_path()
@@ -22,12 +23,15 @@ def check_process():
       flag = support.sortImages()
       if flag:
          messagebox.showinfo('Info', 'Process completed')
+         display_location["text"] = ""
+         select_location["text"] = "Add Location"
+         start["state"] = "disabled"
       else:
          messagebox.showinfo('Info', 'Try Again!')
    
 
 title = Label(root, text="Turning Chaos into Visual Harmony!")
-title.pack()
+title.pack(pady=5)
 
 display_location = Label(root,text="",borderwidth=1,relief="solid",width=30)
 display_location.pack(padx=5,pady=5)
