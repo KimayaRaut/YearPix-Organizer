@@ -24,12 +24,6 @@ class Support:
                             os.mkdir(destination+"/"+str(year))
                             shutil.move(source+"/"+img_file,destination+"/"+year+"/"+img_file)
                     
-            # for img_file in os.listdir(source):
-            #     if not os.path.exists(destination+"/other"):
-            #         os.mkdir(destination+"/other")
-            #         shutil.move(source+"/"+img_file,destination+"/"+"other"+"/"+img_file)
-            #     else:
-            #         shutil.move(source+"/"+img_file,destination+"/"+"other"+"/"+img_file)
             return True
         except Exception as e:
             print(str(e))
